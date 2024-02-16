@@ -1,0 +1,97 @@
+﻿@page
+@*
+abriu aqui pra gente comentar
+*@
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Cadastro de produtos";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+
+    <!--<p>@Model.prod.Id<br></p>
+    <p>@Model.prod.Nome<br></p>
+    <p>@Model.prod.Valor<br></p>-->
+    Contando a lista:  @Model.ProdutoList.Count
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.ProdutoList)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>                        @p.Nome            </td>
+                    <td>
+                        @p.Valor
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+
+
+    </table>
+
+
+
+
+
+    <h1>@Model.nome</h1>
+</div>
+@page
+@*
+abriu aqui pra gente comentar
+*@
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Cadastro de produtos";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+
+    <!--<p>@Model.prod.Id<br></p>
+    <p>@Model.prod.Nome<br></p>
+    <p>@Model.prod.Valor<br></p>-->
+    Contando a lista:  @Model.ProdutoList.Count
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.ProdutoList)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Nome</td>
+                    <td>@p.Valor</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
+
+    <h1>@Model.nome</h1>
+</div>
