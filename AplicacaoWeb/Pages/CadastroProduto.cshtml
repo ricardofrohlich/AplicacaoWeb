@@ -1,0 +1,89 @@
+﻿@page
+@model AplicacaoWeb.Pages.CadastroProdutoModel
+@{
+    ViewData["Title"] = "Cadastro de Produto";
+@*
+    var parteDoDia = "manhã";
+
+    if (DateTime.Now.Hour > 12) //se tivesse duas linhas dentro do if, precisaria abrir e fechar chaves
+        parteDoDia = "tarde";
+    if (DateTime.Now.Hour > 18)
+        parteDoDia = "noite"; *@
+}
+<!--<h1>Olá, boa parteDoDia em @DateTime.Now.ToString("dddd, dd MMMM") </h1>-->
+@*
+@functions{
+    string ObterParteDoDia (DateTime dt)
+    {
+        var parteDoDia = "manhã";
+
+        if (DateTime.Now.Hour > 12)
+        {
+            parteDoDia = "tarde"; //se eu tivesse duas linhas, precisaria abrir e fechar chave
+        }
+            
+        if (DateTime.Now.Hour > 18)
+            parteDoDia = "noite";
+
+        return parteDoDia;
+    }
+}
+
+<h1>Olá, Usando a função, boa @ObterParteDoDia(DateTime.Now) em @DateTime.Now.ToString("dddd, dd MMMM") </h1>
+
+
+<h1>Boa @(DateTime.Now.Hour > 12 ? "Tarde" : "Manhã") </h1>
+
+
+@if(DateTime.Now.Hour <= 12)
+{
+    <h1>Bom dia!</h1>
+}
+else if (DateTime.Now.Hour <= 18)
+{
+    <h1>Boa tarde!</h1>
+}
+else
+{
+    <h1>Boa noite!</h1>
+}*@
+
+@*
+@functions {
+    string saudacao () {
+     var horaAtual = DateTime.Now.Hour;
+            var periodo = horaAtual <= 12 ? "dia" : horaAtual <= 18 ? "tarde" : "noite";
+            return $"Boa {periodo}!";
+    }
+}
+<h1> @saudacao()</h1
+
+
+@functions{
+    public class Cidade
+    {
+        public string Nome { get; set; }
+        public string Pais { get; set; }
+    }
+    List<Cidade> cidades = new List<Cidade>
+    {
+        new Cidade { Nome = "Rio de Janeiro", Pais = "Brasil"},
+        new Cidade { Nome = "Nova Iorque", Pais = "Estados Unidos"},
+        new Cidade { Nome = "Buenos Aires", Pais = "Argentina"},
+        new Cidade { Nome = "Montevideu", Pais = "Uruguai"}
+    };
+}
+
+<ul>
+    @foreach (var cidade in cidades)
+    {
+        <li>@cidade.Nome - @cidade.Pais</li>
+    }
+
+</ul>
+*@
+<h2>Cadastro de produtos</h2>
+
+@Html.Raw("<ul><li>Testando</li></ul>")
+
+@Html.Raw("<h1>Cadastro de Cidades</h1>")
